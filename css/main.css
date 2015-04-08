@@ -49,9 +49,12 @@ article {
   font-family: monospace;
   border: 1px solid #82c4f8;
   width: 45%;
-  height: 400px;
+  height: 360px;
   padding: 8px;
   resize: vertical;
+}
+#javascript-code {
+    float: right;
 }
 .editor:focus {
   border: 1px solid #2196f3;
