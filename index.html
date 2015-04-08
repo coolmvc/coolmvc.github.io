@@ -72,12 +72,20 @@ main class Main {
 		}
 	}
 
+	method scroll() {
+		var web = new Web();
+		var editor1 = web.select("#cool-code");
+		var editor2 = web.select("#javascript-code");
+		editor2.scrollTop = editor1.scrollTop;
+	}
+
 	new {
 		this.transpile();
 		var web = new Web();
 		var editor1 = web.select("#cool-code");
 		editor1.oninput = this.transpile;
 		editor1.onkeydown = this.keydown;
+		editor1.onscroll = this.scroll;
 	}
 }
 </script>
