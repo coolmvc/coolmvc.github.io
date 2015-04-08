@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kookiat Suetrong</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="/css/normalize.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="short icon" href="/favicon.ico" />
+</head>
+
+<body>
+
+<header>
+	<img src="/images/cool.png" />
+	<h1>Kookiat Suetrong Beer</h1>
+	<h3>The creator of Cool!, iPay and OpenBI</h1>
+</header>
+
+<article>
+	<h2>Cool! Ideas</h2>
+	<ul>
+		<li>SAP - Simple And Powerful       -> Only 20-30 methods, but produce same result as large framework.</li>
+		<li>TOI - Text editor Over IDE      -> You can use any text editor to write Cool!</li>
+		<li>LIS - Life Is Short             -> Don't spend 10000 hours learn how to code.</li>
+		<li>BAS - Browser And Server        -> Cool! can use on browser and server.</li>
+		<li>LOC - Learn Online Conveniently -> No installation required. Cool! has online editor.</li>
+		<li>ACC - Anybody Can Code          -> Anybody can learn Cool! in an hour.</li>
+	</ul>
+
+	<h2>Useful Links</h2>
+	<ul>
+		<li><a href="https://github.com/kookiatsuetrong/cool"
+			>The Cool! Programming Language</a></li>
+		<li><a href=
+			"https://github.com/kookiatsuetrong/cool/blob/master/mvc/app.cool"
+			>MVC Web Application</a></li>
+	</ul>
+</article>
+
+<script type="text/cool">
+main class Main {
+
+	// two-way binding
+	member name; // @id
+
+	member prime = [];
+	method sieve(n) {
+		this.prime[0] = false;
+		this.prime[1] = false;
+		for (var i = 2; i <= n; i++) {
+			this.prime[i] = true;
+		}
+		for (var i = 0; i <= Math.sqrt(n); i++) {
+			if (this.prime[i] == true) {
+				for (var j = 2; i * j <= n; j++) {
+					this.prime[i * j] = false;
+				}
+			}
+		}
+	}
+	new {
+		var n = 100;
+		var system = new System();
+		system.log("Prime Numbers <= " + n);
+		this.sieve(n);
+		for (var i = 0; i <= n; i++) {
+			if (this.prime[i]) {
+				system.log(i);
+			}
+		}
+	}
+}
+</script>
+<script src="/cool/cool.js"></script>
+</body>
+</html>
