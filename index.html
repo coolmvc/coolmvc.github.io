@@ -74,11 +74,18 @@ main class Main {
 		}
 	}
 
-	method scroll() {
+	method scrollCool() {
 		var web = new Web();
 		var editor1 = web.select("#cool-code");
 		var editor2 = web.select("#javascript-code");
 		editor2.scrollTop = editor1.scrollTop;
+	}
+
+	method scrollJavaScript() {
+		var web = new Web();
+		var editor1 = web.select("#cool-code");
+		var editor2 = web.select("#javascript-code");
+		editor1.scrollTop = editor2.scrollTop;
 	}
 
 	new {
@@ -87,7 +94,9 @@ main class Main {
 		var editor1 = web.select("#cool-code");
 		editor1.oninput = this.transpile;
 		editor1.onkeydown = this.keydown;
-		editor1.onscroll = this.scroll;
+		editor1.onscroll = this.scrollCool;
+		var editor2 = web.select("#javascript-code");
+		editor2.onscroll = this.scrollJavaScript;
 	}
 }
 </script>
